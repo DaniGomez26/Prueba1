@@ -16,6 +16,25 @@ public static Double promedioNotas (ArrayList <Double> arregloNotas){
 		return sumador/arregloNotas.size();
 }
 
+public static void notas (ArrayList<Double>arregloNotas){
+	Double alta= 0.0;
+	Double baja= 0.0;
+	Double nota = 0.0;
+
+	for(int x = 0; x < arregloNotas.size();x++){
+		if(arregloNotas.get(x) > alta){
+			alta = nota;
+		}
+		if(arregloNotas.get(x) < baja){
+			baja = nota;
+		}
+	}
+	Double promedio =promedioNotas(arregloNotas);
+	System.out.println("La nota mas baja es: "+baja);
+	System.out.println("La nota mas alta es: "+alta);
+	System.out.println("El promedio es: "+promedio);
+}
+
 	public static void main(String[] args) {
 	/*Se debe crear una función que permita al profesor ingresar notas por estudiante y que
 luego permita obtener el promedio de cada estudiante. 
@@ -27,7 +46,6 @@ La funcion promedio esta fuera del main y la llmaré en el main*/
 		String nomAlum;
 	
 		Scanner dato = new Scanner(System.in);
-		
 		ArrayList<String> listaAlum = new ArrayList<String>();
 		HashMap<String, ArrayList<Double>> cursoHash = new HashMap<String, ArrayList<Double>>();
 
@@ -64,27 +82,13 @@ La funcion promedio esta fuera del main y la llmaré en el main*/
 			}
 			cursoHash.put(nomAlum, arregloNotas);
 		}
-		Double alta= 0.0;
-		Double baja= 0.0;
 
-		for(int x = 0; x < arregloNotas.size();x++){
-			Double nota;
-			if(arregloNotas.get(x) > alta){
-				alta = nota;
-			}
-			if(arregloNotas.get(x) < baja){
-				baja = nota;
-			}
-		}
 
 		}
 
-	private static ArrayList<Double> arregloNotas;
+	
 			
-		Double promedio =promedioNotas(arregloNotas);
-		System.out.println("La nota mas baja es: "+baja);
-		System.out.println("La nota mas alta es: "+alta);
-		System.out.println("El promedio es: "+promedio);
+
 		
 /*Se debe crear una función que dado un arreglo de notas obtenga la mejor nota, la peor
 nota y el promedio de notas.
