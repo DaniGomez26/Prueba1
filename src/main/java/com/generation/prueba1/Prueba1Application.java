@@ -10,7 +10,7 @@ public class Prueba1Application {
 //funcion promedio, no supe como hacer todo en el  main :c
 public static Double promedioNotas (ArrayList <Double> arregloNotas){
 	Double sumador=0.0;
-		for(int i = 1; i < arregloNotas.size(); i++){
+		for(int i = 0; i < arregloNotas.size(); i++){
 			sumador+=arregloNotas.get(i);
 		}
 		return sumador/arregloNotas.size();
@@ -25,12 +25,17 @@ La funcion promedio esta fuera del main y la llmaré en el main*/
 		int cantAlum;
 		int cantNotas;
 		String nomAlum;
-		Double nota= 0.0;
+	
 		Scanner dato = new Scanner(System.in);
-		ArrayList<Double> arregloNotas = new ArrayList<Double>();
+		
 		ArrayList<String> listaAlum = new ArrayList<String>();
+		HashMap<String, ArrayList<Double>> cursoHash = new HashMap<String, ArrayList<Double>>();
 
-		//Pido info al usuario de cuantos alumnos y notas va a ingresar y que notas son
+		//Pido info al usuario de cuantos alumnos y notas va a ingresar y que notas son y los nombres
+
+		/*Se debe crear una función que permita guardar un arreglo de una cierta cantidad de
+		alumnos por curso y que luego los muestre.*/
+		
 		do{
 		System.out.println("Ingrese la cantidad de alumnos que hay en el curso");
 		cantAlum = dato.nextInt();
@@ -47,19 +52,23 @@ La funcion promedio esta fuera del main y la llmaré en el main*/
 			}
 		} while (cantNotas<=0);
 
-		for(int i = 1; i<=cantAlum; i++ ){
-			System.out.println("Ingrese las notas:");
-			nota = dato.nextDouble();
-			arregloNotas.add(nota);
+		for(int i = 1; i <= cantAlum; i++ ){
+			dato.nextLine();
+			ArrayList<Double> arregloNotas = new ArrayList<Double>();
+			System.out.println("Ingrese nombre del Alumno: ");
+			nomAlum = dato.nextLine();
+			for(int x =1; x<= cantNotas; x++){
+				System.out.print("ingresa la nota "+x+" del alumno "+nomAlum+": ");
+				Double nota =dato.nextDouble();
+				arregloNotas.add(nota);
+			}
+			cursoHash.put(nomAlum, arregloNotas);
 		}
-		
-/*Se debe crear una función que dado un arreglo de notas obtenga la mejor nota, la peor
-nota y el promedio de notas.
- */
 		Double alta= 0.0;
 		Double baja= 0.0;
 
-		for (int x=1; x<=arregloNotas.size(); x++){
+		for(int x = 0; x < arregloNotas.size();x++){
+			Double nota;
 			if(arregloNotas.get(x) > alta){
 				alta = nota;
 			}
@@ -67,22 +76,29 @@ nota y el promedio de notas.
 				baja = nota;
 			}
 		}
+
+		}
+
+	private static ArrayList<Double> arregloNotas;
+			
 		Double promedio =promedioNotas(arregloNotas);
 		System.out.println("La nota mas baja es: "+baja);
 		System.out.println("La nota mas alta es: "+alta);
-		System.out.println("El promedio es : "+promedio);
+		System.out.println("El promedio es: "+promedio);
+		
+/*Se debe crear una función que dado un arreglo de notas obtenga la mejor nota, la peor
+nota y el promedio de notas.
+ */
+		
 		// 
 
 	
 
-		/*Se debe crear una función que permita guardar un arreglo de una cierta cantidad de
-		alumnos por curso y que luego los muestre.*/
 
-		
+
+			
 	
 
-		/*Se debe crear una función que permita guardar un arreglo de una cierta cantidad de
-alumnos por curso y que luego los muestre */
 
 
 
@@ -90,4 +106,4 @@ alumnos por curso y que luego los muestre */
 		
 
 	}
-}
+

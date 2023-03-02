@@ -18,11 +18,11 @@ public class grado extends curso {
 
     public void numGrado(){
         System.out.print("¿En que nivel va el alumno?");
-        
+
     }
     @Override
     public String toString() {
-        return super.toString()+"grado [grado=" + grado + "]";
+        return super.toString()+"Está en el nivel["  + grado + "]";
     }
     
 }
