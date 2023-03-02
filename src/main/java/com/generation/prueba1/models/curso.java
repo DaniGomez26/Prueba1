@@ -1,30 +1,30 @@
 package com.generation.prueba1.models;
 
 public class curso {
-    public String alumnos;
+    public String nomCurso;
 
     public curso() {
     }
 
-    public curso(String alumnos) {
-        this.alumnos = alumnos;
+    public curso(String nomCurso) {
+        this.nomCurso = nomCurso;
     }
 
-    public String getAlumnos() {
-        return alumnos;
+    public String getnomCurso() {
+        return nomCurso;
     }
 
-    public void setAlumnos(String alumnos) {
-        this.alumnos = alumnos;
+    public void setnomCurso(String nomCurso) {
+        this.nomCurso = nomCurso;
     }
 
     public void mensjCurso (){
-        System.out.print("Son el mejor curso! :D");
+        System.out.print("El "+ nomCurso+" es el mejor curso! :D");
     }
 
     @Override
     public String toString() {
-        return "curso [alumnos=" + alumnos + "]";
+        return "[" + nomCurso + "]";
     }
     
 }

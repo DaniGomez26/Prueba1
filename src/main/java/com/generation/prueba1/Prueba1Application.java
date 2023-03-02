@@ -5,6 +5,10 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.generation.prueba1.models.curso;
+import com.generation.prueba1.models.grado;
+import com.generation.prueba1.models.materia;
+
 @SpringBootApplication
 public class Prueba1Application {
 //funcion promedio, no supe como hacer todo en el  main :c
@@ -18,7 +22,7 @@ public static Double promedioNotas (ArrayList <Double> arregloNotas){
 
 public static void notas (ArrayList<Double>arregloNotas){
 	Double alta= 0.0;
-	Double baja= 0.0;
+	Double baja= arregloNotas.get(0);
 	
 
 	for(Double nota : arregloNotas){
@@ -32,12 +36,12 @@ public static void notas (ArrayList<Double>arregloNotas){
 	Double promedio =promedioNotas(arregloNotas);
 	System.out.println("La nota mas baja es: "+baja);
 	System.out.println("La nota mas alta es: "+alta);
-	System.out.println("El promedio es: "+promedio);
+	//System.out.println("El promedio es: "+promedio);
 }
 
 	public static void main(String[] args) {
 
-
+System.out.println("*****************************************Se ingresan notas,nombre****************************");
 //declaro variables e inicializo Scanner y ArrayList
 		int cantAlum;
 		int cantNotas;
@@ -74,7 +78,7 @@ public static void notas (ArrayList<Double>arregloNotas){
 		for(int i = 1; i <= cantAlum; i++ ){
 			dato.nextLine();
 			ArrayList<Double> arregloNotas = new ArrayList<Double>();
-			System.out.println("Ingrese nombre del Alumno: ");
+			System.out.print("Ingrese nombre del Alumno: ");
 			nomAlum = dato.nextLine();
 			for(int x =1; x<= cantNotas; x++){
 				System.out.print("ingresa la nota "+x+" del alumno "+nomAlum+": ");
@@ -84,7 +88,8 @@ public static void notas (ArrayList<Double>arregloNotas){
 			cursoHash.put(nomAlum, arregloNotas);
 		}
 		//aqui muestra el curso, el nombre y las notas de cada alumno
-		System.out.print(cursoHash);
+		System.out.println("**************************muestra el curso*****************************");
+		System.out.println(cursoHash);
 
 
 		for (String i : cursoHash.keySet()){
@@ -93,7 +98,27 @@ public static void notas (ArrayList<Double>arregloNotas){
 			notas(cursoHash.get(i));
 		}
 
+		curso curso1 = new curso();
+		curso1.setnomCurso("4to B");
+		System.out.println(curso1);
+		curso1.mensjCurso();
+		System.out.println("\n");
+
+		grado grado1 = new grado();
+		grado1.setGrado(4);
+		grado1.numGrado();  //no supe como sacar este null
+		System.out.print(grado1);
+		System.out.println("\n");
+
+		materia arte = new materia();
+		System.out.println(arte);
+		arte.arte(true);
+
+		
+
 	}
 
 	}
+
+
 
