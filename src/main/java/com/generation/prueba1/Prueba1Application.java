@@ -36,9 +36,7 @@ public static void notas (ArrayList<Double>arregloNotas){
 }
 
 	public static void main(String[] args) {
-	/*Se debe crear una función que permita al profesor ingresar notas por estudiante y que
-luego permita obtener el promedio de cada estudiante. 
-La funcion promedio esta fuera del main y la llmaré en el main*/
+
 
 //declaro variables e inicializo Scanner y ArrayList
 		int cantAlum;
@@ -48,6 +46,9 @@ La funcion promedio esta fuera del main y la llmaré en el main*/
 		Scanner dato = new Scanner(System.in);
 		ArrayList<String> listaAlum = new ArrayList<String>();
 		HashMap<String, ArrayList<Double>> cursoHash = new HashMap<String, ArrayList<Double>>();
+			/*Se debe crear una función que permita al profesor ingresar notas por estudiante y que
+			luego permita obtener el promedio de cada estudiante. 
+			La funcion promedio esta fuera del main y la llmaré en el main*/
 
 		//Pido info al usuario de cuantos alumnos y notas va a ingresar y que notas son y los nombres
 
@@ -82,32 +83,15 @@ La funcion promedio esta fuera del main y la llmaré en el main*/
 			}
 			cursoHash.put(nomAlum, arregloNotas);
 		}
+		//aqui muestra el curso, el nombre y las notas de cada alumno
+		System.out.print(cursoHash);
 
 
+		for (String i : cursoHash.keySet()){
+			Double promAlum = promedioNotas(cursoHash.get(i));
+			System.out.print("El promedio del alumno "+ i +" es de: " + promAlum);
 		}
-
-	
-			
-
-		
-/*Se debe crear una función que dado un arreglo de notas obtenga la mejor nota, la peor
-nota y el promedio de notas.
- */
-		
-		// 
-
-	
-
-
-
-			
-	
-
-
-
-
-
-		
+	}
 
 	}
 
