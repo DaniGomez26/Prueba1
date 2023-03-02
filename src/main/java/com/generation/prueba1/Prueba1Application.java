@@ -19,13 +19,13 @@ public static Double promedioNotas (ArrayList <Double> arregloNotas){
 public static void notas (ArrayList<Double>arregloNotas){
 	Double alta= 0.0;
 	Double baja= 0.0;
-	Double nota = 0.0;
+	
 
-	for(int x = 0; x < arregloNotas.size();x++){
-		if(arregloNotas.get(x) > alta){
+	for(Double nota : arregloNotas){
+		if(nota > alta){
 			alta = nota;
 		}
-		if(arregloNotas.get(x) < baja){
+		if(nota < baja){
 			baja = nota;
 		}
 	}
@@ -89,8 +89,10 @@ public static void notas (ArrayList<Double>arregloNotas){
 
 		for (String i : cursoHash.keySet()){
 			Double promAlum = promedioNotas(cursoHash.get(i));
-			System.out.print("El promedio del alumno "+ i +" es de: " + promAlum);
+			System.out.println("El promedio del alumno "+ i +" es de: " + promAlum);
+			notas(cursoHash.get(i));
 		}
+
 	}
 
 	}
