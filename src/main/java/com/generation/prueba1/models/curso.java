@@ -18,6 +18,10 @@ public class curso {
         this.alumnos = alumnos;
     }
 
+    public void mensjCurso (){
+        System.out.print("Son el mejor curso! :D");
+    }
+
     @Override
     public String toString() {
         return "curso [alumnos=" + alumnos + "]";

@@ -25,13 +25,12 @@ La funcion promedio esta fuera del main y la llmaré en el main*/
 		int cantAlum;
 		int cantNotas;
 		String nomAlum;
-		Double promAlum;
 		Double nota= 0.0;
 		Scanner dato = new Scanner(System.in);
 		ArrayList<Double> arregloNotas = new ArrayList<Double>();
+		ArrayList<String> listaAlum = new ArrayList<String>();
 
 		//Pido info al usuario de cuantos alumnos y notas va a ingresar y que notas son
-//
 		do{
 		System.out.println("Ingrese la cantidad de alumnos que hay en el curso");
 		cantAlum = dato.nextInt();
@@ -53,8 +52,10 @@ La funcion promedio esta fuera del main y la llmaré en el main*/
 			nota = dato.nextDouble();
 			arregloNotas.add(nota);
 		}
-		//voy a recorrer el arreglo e identificar cual es la nota mas alta y la mas baja
-
+		
+/*Se debe crear una función que dado un arreglo de notas obtenga la mejor nota, la peor
+nota y el promedio de notas.
+ */
 		Double alta= 0.0;
 		Double baja= 0.0;
 
@@ -66,6 +67,25 @@ La funcion promedio esta fuera del main y la llmaré en el main*/
 				baja = nota;
 			}
 		}
+		Double promedio =promedioNotas(arregloNotas);
+		System.out.println("La nota mas baja es: "+baja);
+		System.out.println("La nota mas alta es: "+alta);
+		System.out.println("El promedio es : "+promedio);
+		// 
+
+	
+
+		/*Se debe crear una función que permita guardar un arreglo de una cierta cantidad de
+		alumnos por curso y que luego los muestre.*/
+
+		
+	
+
+		/*Se debe crear una función que permita guardar un arreglo de una cierta cantidad de
+alumnos por curso y que luego los muestre */
+
+
+
 
 		
 

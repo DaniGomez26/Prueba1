@@ -14,6 +14,16 @@ public class materia extends curso {
         super(alumnos);
         this.materia = materia;
     }
+
+    public String arte(Boolean ramoArte){
+        if(ramoArte=true){
+            return "Lxs niños de este curso tienen Arte entre sus materias:)";
+            }else{
+            return "Lxs niñxs de este curso no tienen Arte :c";
+            }
+        }
+    
+
     @Override
     public String toString() {
         return super.toString()+"materia [materia=" + materia + "]";
